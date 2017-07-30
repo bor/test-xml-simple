@@ -11,7 +11,6 @@ use Test::LongString;
 use XML::LibXML;
 
 my $Test = Test::Builder->new();
-my $Xml;
 
 sub import {
    my $self = shift;
@@ -44,17 +43,20 @@ sub _valid_xml {
   local $Test::Builder::Level = $Test::Builder::Level + 2; 
   return fail("XML is not defined") unless defined $xml;
   return fail("XML is missing")     unless $xml;
+
+  my $xml_node;
   if ( ref $xml ) {
       return fail("accept only 'XML::LibXML::Document' as object") unless ref $xml eq 'XML::LibXML::Document';
-      $Xml = $xml;
+      $xml_node = $xml;
   }
   else {
     return fail("string can't contain XML: no tags") 
       unless ($xml =~ /</ and $xml =~/>/);
-    eval { $Xml = XML::LibXML->new->parse_string($xml); };
+    eval { $xml_node = XML::LibXML->new->parse_string($xml); };
     do { chomp $@; return fail($@) } if $@;
   }
-  return $Xml;
+
+  return $xml_node;
 }
 
 sub _find {
