@@ -46,7 +46,8 @@ sub _valid_xml {
 
   my $xml_node;
   if ( ref $xml ) {
-      return fail("accept only 'XML::LibXML::Document' as object") unless ref $xml eq 'XML::LibXML::Document';
+      return fail("accept only 'XML::LibXML::(Document|Node)' as object")
+        unless ref $xml eq 'XML::LibXML::Document' or ref $xml eq 'XML::LibXML::Node';
       $xml_node = $xml;
   }
   else {

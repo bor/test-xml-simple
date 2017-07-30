@@ -1,4 +1,4 @@
-use Test::Builder::Tester tests=>6;
+use Test::Builder::Tester tests => 7;
 use Test::More;
 use Test::XML::Simple;
 use XML::LibXML;
@@ -25,8 +25,9 @@ my $valid = <<EOS;
 </CATALOG>
 EOS
 
-my $xml_doc = XML::LibXML->createDocument( '1.0' );
+my $xml_doc     = XML::LibXML->createDocument('1.0');
 my $not_xml_doc = bless {}, 'Foo::Bar';
+my ($xml_node)  = $xml_doc->find('/');
 
 test_out("not ok 1 - XML is not defined");
 test_fail(+1);
@@ -55,3 +56,7 @@ test_out("not ok 1 - accept only 'XML::LibXML::Document' as object");
 test_fail(+1);
 xml_valid( $not_xml_doc, 'not xml doc object' );
 test_test('not xml doc object');
+
+test_out('ok 1 - good xml node');
+xml_valid( $xml_node, 'good xml node' );
+test_test('good xml node');
