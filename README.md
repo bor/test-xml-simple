@@ -1,4 +1,4 @@
-#Test::XML::Simple
+# Test::XML::Simple
 
 [![Build Status](https://travis-ci.org/joemcmahon/test-xml-simple.svg?branch=master)](https://travis-ci.org/joemcmahon/test-xml-simple)
 [![Coverage Status](https://coveralls.io/repos/joemcmahon/test-xml-simple/badge.png?branch=master)](https://coveralls.io/r/joemcmahon/test-xml-simple?branch=master)
@@ -15,16 +15,18 @@ Test::More style tests on XML input.
   xml_is_deeply $xml, '/xpath/expr', $xml_fragment, "fragment matches path";
 ```
 
-##INSTALLATION
+## INSTALLATION
 
 To install this module type the following:
 
+```
    perl Makefile.PL
    make
    make test
    make install
+```
 
-##DEPENDENCIES
+## DEPENDENCIES
 
 This module requires these other modules and libraries:
 
@@ -35,7 +37,7 @@ This module requires these other modules and libraries:
 
 You should be able to use this module with any Perl from version 5.8 and above.
 
-##COPYRIGHT AND LICENCE
+## COPYRIGHT AND LICENCE
 
 Copyright (C) 2005-2016 by Yahoo! and Joe McMahon
 
