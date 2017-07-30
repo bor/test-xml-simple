@@ -1,0 +1,3 @@
+--indent-columns=2                      # default: 4
+--maximum-line-length=120               # default: 80
+--output-line-ending="unix"             # default: system depend
