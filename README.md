@@ -40,7 +40,7 @@ You should be able to use this module with any Perl from version 5.8 and above.
 
 ## COPYRIGHT AND LICENCE
 
-Copyright (C) 2005-2016 by Yahoo! and Joe McMahon
+Copyright (C) 2005-2017 by Yahoo! and Joe McMahon
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.8 or,
